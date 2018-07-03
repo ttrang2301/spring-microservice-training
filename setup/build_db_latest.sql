@@ -151,6 +151,24 @@ TABLESPACE pg_default;
 ALTER TABLE search.fares
     OWNER to postgres;
 
+-- Table: search.inventory
+
+-- DROP TABLE search.inventory;
+
+CREATE TABLE search.inventory
+(
+    id serial NOT NULL,
+    count integer NOT NULL,
+    CONSTRAINT inventory_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE search.inventory
+    OWNER to postgres;
+
 -- Table: search.flight
 
 -- DROP TABLE search.flight;
@@ -180,24 +198,6 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE search.flight
-    OWNER to postgres;
-
--- Table: search.inventory
-
--- DROP TABLE search.inventory;
-
-CREATE TABLE search.inventory
-(
-    id serial NOT NULL,
-    count integer NOT NULL,
-    CONSTRAINT inventory_pkey PRIMARY KEY (id)
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
-
-ALTER TABLE search.inventory
     OWNER to postgres;
 
 --- SEQUENCE
