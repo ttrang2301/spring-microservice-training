@@ -203,7 +203,7 @@ ALTER TABLE search.flight
 --- SEQUENCE
 
 CREATE SEQUENCE book.seq_bookingrecord
-    START WITH 1
+    START WITH 3
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
@@ -222,7 +222,7 @@ CREATE SEQUENCE book.seq_passenger
     CACHE 1;
 --
 CREATE SEQUENCE checkin.seq_checkinrecord
-    START WITH 1
+    START WITH 3
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
