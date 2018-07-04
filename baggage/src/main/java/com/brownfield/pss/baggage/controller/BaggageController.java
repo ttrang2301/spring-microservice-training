@@ -35,7 +35,7 @@ public class BaggageController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    List<BaggageRecord> getBaggage (@RequestParam(name="checkin-id") long checkinId) {
+    List<BaggageRecord> getBaggage (@RequestParam("checkin-id") Long checkinId) {
         LOG.info("GetBaggage : " + checkinId);
         return baggageComponent.getBaggageOfCheckin(checkinId);
     }

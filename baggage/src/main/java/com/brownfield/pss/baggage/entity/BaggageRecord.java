@@ -10,7 +10,7 @@ public class BaggageRecord {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	long id;
+	Long id;
 
 	private String description;
 	private Integer checkinId;
@@ -23,11 +23,11 @@ public class BaggageRecord {
 		this.description = flightNumber;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
