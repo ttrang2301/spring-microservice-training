@@ -15,12 +15,12 @@ public class BaggageRecord {
 	private String description;
 	private Integer checkinId;
 
-	public String getFlightNumber() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setFlightNumber(String flightNumber) {
-		this.description = flightNumber;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Integer getId() {
