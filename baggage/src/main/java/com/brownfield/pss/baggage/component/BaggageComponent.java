@@ -38,7 +38,7 @@ public class BaggageComponent {
 		return 0;
 	}
 
-	public List<BaggageRecord> getBaggageOfCheckin(long checkinId) {
+	public List<BaggageRecord> getBaggageOfCheckin(int checkinId) {
 		return baggageRepository.findByCheckinId(checkinId);
 	}
 	

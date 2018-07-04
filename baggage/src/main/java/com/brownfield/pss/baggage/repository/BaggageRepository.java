@@ -8,6 +8,6 @@ import com.brownfield.pss.baggage.entity.BaggageRecord;
 
 public interface BaggageRepository extends JpaRepository<BaggageRecord, Long> {
 
-	List<BaggageRecord> findByCheckinId(long checkinId);
+	List<BaggageRecord> findByCheckinId(int checkinId);
 
 }
