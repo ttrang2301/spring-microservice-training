@@ -19,25 +19,24 @@ import com.brownfield.pss.baggage.entity.BaggageRecord;
 @CrossOrigin
 @RequestMapping("/baggage")
 public class BaggageController {
-    private static final Logger LOG = LoggerFactory.getLogger(BaggageController.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(BaggageController.class.getName());
 
-    BaggageComponent baggageComponent;
+	BaggageComponent baggageComponent;
 
-    @Autowired
-    BaggageController (BaggageComponent bookingComponent) {
-        this.baggageComponent = bookingComponent;
-    }
+	@Autowired
+	BaggageController(BaggageComponent bookingComponent) {
+		this.baggageComponent = bookingComponent;
+	}
 
-    @RequestMapping(method = RequestMethod.POST)
-    long book (@RequestBody BaggageRecord record) {
-        LOG.info("Baggage : " + record);
-        return baggageComponent.receive(record);
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	BaggageRecord book(@RequestBody BaggageRecord record) {
+		LOG.info("Baggage : " + record);
+		return baggageComponent.receive(record);
+	}
 
-    @RequestMapping(method = RequestMethod.GET)
-    List<BaggageRecord> getBaggage (@RequestParam("checkin-id") Integer checkinId) {
-        LOG.info("GetBaggage : " + checkinId);
-		System.out.println("checkinId: " + checkinId);
-        return baggageComponent.getBaggageOfCheckin(checkinId);
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	List<BaggageRecord> getBaggage(@RequestParam("checkin-id") Integer checkinId) {
+		LOG.info("GetBaggage : " + checkinId);
+		return baggageComponent.getBaggageOfCheckin(checkinId);
+	}
 }

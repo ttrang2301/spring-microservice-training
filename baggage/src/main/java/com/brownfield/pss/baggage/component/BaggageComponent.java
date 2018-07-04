@@ -17,30 +17,28 @@ import com.brownfield.pss.baggage.repository.BaggageRepository;
 @Component
 public class BaggageComponent {
 	private static final Logger logger = LoggerFactory.getLogger(BaggageComponent.class);
-   
+
 	BaggageRepository baggageRepository;
-	
+
 	Sender sender;
 
-	public BaggageComponent(){
-		
+	public BaggageComponent() {
+
 	}
-	
+
 	@Autowired
-	public BaggageComponent (BaggageRepository bookingRepository,
-					  Sender sender){
-		this.baggageRepository = bookingRepository;
- 		this.sender = sender;
+	public BaggageComponent(BaggageRepository baggageRepository, Sender sender) {
+		this.baggageRepository = baggageRepository;
+		this.sender = sender;
 	}
-	public long receive(BaggageRecord record) {
-		//
-		//return id;
-		return 0;
+
+	public BaggageRecord receive(BaggageRecord record) {
+		record = baggageRepository.save(record);
+		return record;
 	}
 
 	public List<BaggageRecord> getBaggageOfCheckin(int checkinId) {
 		return baggageRepository.findByCheckinId(checkinId);
 	}
-	
-}
 
+}
