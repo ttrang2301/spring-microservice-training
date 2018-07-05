@@ -32,7 +32,7 @@ public class Sender {
 }
 
 interface BaggageSource {
-	public static String BAGGAGEQ = "bagaggeQ";
+	public static String BAGGAGEQ = "baggageQ";
 
 	@Output(BaggageSource.BAGGAGEQ)
 	public MessageChannel bagaggeQ();
