@@ -1,6 +1,8 @@
 package com.brownfield.pss.baggage.component;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +36,10 @@ public class BaggageComponent {
 
 	public BaggageRecord receive(BaggageRecord record) {
 		record = baggageRepository.save(record);
+		Map<String, Object> message = new HashMap<String, Object>();
+		message.put("BAGGAGE_ID", record.getId());
+		message.put("CHECKIN_ID", record.getCheckinId());
+		sender.send(message);
 		return record;
 	}
 
