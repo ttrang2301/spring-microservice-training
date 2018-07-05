@@ -29,6 +29,8 @@ public class Receiver {
 	public void accept(Map<String, Object> baggageDetails) {
 		logger.info("Baggage: [BAGGAGE_ID=" + baggageDetails.get("BAGGAGE_ID") + ", CHECKIN_ID="
 				+ baggageDetails.get("CHECKIN_ID") + "]");
+		System.out.println("Baggage: [BAGGAGE_ID=" + baggageDetails.get("BAGGAGE_ID") + ", CHECKIN_ID="
+				+ baggageDetails.get("CHECKIN_ID") + "]");
 	}
 }
 
